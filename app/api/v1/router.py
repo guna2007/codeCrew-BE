@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.v1 import auth, users, platform_accounts, sync, snapshots
+from app.api.v1 import auth, users, platform_accounts, sync, snapshots, dashboard
 
 api_router = APIRouter()
 
@@ -22,3 +22,6 @@ api_router.include_router(sync.router)
 
 # Snapshots routes
 api_router.include_router(snapshots.router)
+
+# Dashboard route
+api_router.include_router(dashboard.router)
