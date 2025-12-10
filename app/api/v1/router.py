@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.v1 import auth, users
+from app.api.v1 import auth, users, platform_accounts
 
 api_router = APIRouter()
 
@@ -15,3 +15,6 @@ api_router.include_router(auth.router, prefix="/auth")
 
 # User routes (protected)
 api_router.include_router(users.router)
+
+# Platform accounts routes
+api_router.include_router(platform_accounts.router)
